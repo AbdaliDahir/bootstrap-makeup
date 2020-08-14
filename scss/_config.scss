@@ -1,0 +1,42 @@
+// Global rounded border mode
+$bm-rounded: true !default;
+
+// Border Radius
+$bm-border-radius: 8px !default;
+
+// State colors
+$bm-custom__color: (
+    brand: ( 
+        default: #3719ea,
+        inverse: #ffffff
+    ),
+    light: (
+        default: #ffffff,
+        inverse: #282a3c 
+    ),
+    dark: ( 
+        default: #0a0a0a,
+        inverse: #ffffff 
+    ),
+    // Bootstrap states
+    primary: ( 
+        default: #1228d1,
+        inverse: #ffffff
+    ),
+    success: ( 
+        default: #1dc9b7,
+        inverse: #ffffff
+    ),
+    info: ( 
+        default: #5578eb,
+        inverse: #ffffff
+    ),
+    warning: ( 
+        default: #ffb822,
+        inverse: #111111
+    ),
+    danger: ( 
+        default: #fd397a,
+        inverse: #ffffff
+    )    
+)!default;
