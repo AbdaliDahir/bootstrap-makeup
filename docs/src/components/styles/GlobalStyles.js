@@ -1,30 +1,11 @@
 import { injectGlobal } from 'emotion';
 
+import './style.scss'
+
 export const baseStyles = injectGlobal`
-  @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
-  @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap');
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-display: swap;
-  }
-  ::-webkit-input-placeholder {
-    /* Edge */
-    color: #c2c2c2;
-  }
-
-  :-ms-input-placeholder {
-    /* Internet Explorer */
-    color: #c2c2c2;
-  }
-
-  ::placeholder {
-    color: #c2c2c2;
-  }
   html,
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Roboto Light', 'Oxygen',
+    font-family: 'GT-Walsheim-Pro-Bold', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Roboto Light', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif,
       'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
@@ -32,14 +13,6 @@ export const baseStyles = injectGlobal`
     scroll-behavior: smooth;
   }
 
-  a {
-    transition: color 0.15s;
-    /* color: #663399; */
-  }
-
-  body {
-    font-family: 'Roboto';
-  }
   .visibleMobile {
     display: none;
   }
@@ -49,15 +22,6 @@ export const baseStyles = injectGlobal`
   .video-responsive {
     position: relative;
     padding-bottom: 56.2%;
-  }
-  a {
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: none;
-  }
-  .displayInline {
-    display: inline-block;
   }
   .navBarToggle {
     border: 0px solid #fff;
