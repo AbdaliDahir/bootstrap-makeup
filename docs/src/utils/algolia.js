@@ -1,4 +1,4 @@
-const config = require('../../config.js');
+const config = require('../data/config.js');
 
 const pageQuery = `{
   pages: allMdx {
@@ -13,7 +13,7 @@ const pageQuery = `{
         }
         frontmatter {
           title
-          metaDescription 
+          metaDescription
         }
         excerpt(pruneLength: 50000)
       }

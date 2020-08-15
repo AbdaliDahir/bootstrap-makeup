@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import config from '../../../config';
+import config from '../../data/config';
 import TreeNode from './treeNode';
 
 const calculateTreeData = edges => {
@@ -140,7 +140,7 @@ const Tree = ({ edges }) => {
 
   return (
     <TreeNode
-      className={`${config.sidebar.frontLine ? 'showFrontLine' : 'hideFrontLine'} firstLevel`}
+      className={`${config.sidebar.frontLine ? 'FrontLine' : 'FrontLine'} firstLevel text-decoration-none py-2`}
       setCollapsed={toggle}
       collapsed={collapsed}
       {...treeData}

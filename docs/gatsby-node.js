@@ -4,7 +4,7 @@ const path = require('path');
 
 const startCase = require('lodash.startcase');
 
-const config = require('./config');
+const config = require('./src/data/config');
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;

@@ -24,9 +24,7 @@ const config = {
     search: {
       enabled: false,
       indexName: 'nuyt',
-      algoliaAppId: 'NR80I5D7IL',
-      algoliaSearchKey: 'd49c2832268f5c4090ab97ca3174e2ce',
-      algoliaAdminKey: '57b260898b461463aa7c2ddba15ed38a',
+
     },
   },
   sidebar: {
@@ -41,7 +39,7 @@ const config = {
     frontline: false,
     ignoreIndex: true,
     title:
-      "<a href='https://bootstrap-makeup.io/learn/'>graphql </a><div class='greenCircle'></div><a href='https://bootstrap-makeup.io/learn/graphql/react/introduction/'>react</a>",
+      "<a href='https://bootstrap-makeup.io/learn/'>Bootstrap Makeup</a>",
   },
   siteMetadata: {
     title: 'Gatsby Gitbook Boilerplate | bootstrap-makeup',

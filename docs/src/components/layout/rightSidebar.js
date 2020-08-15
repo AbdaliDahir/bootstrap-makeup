@@ -2,8 +2,8 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
 // import Link from './link';
-import config from '../../config';
-import { Sidebar, ListItem } from './styles/Sidebar';
+import config from '../../data/config';
+import { Sidebar, ListItem } from '../styles/Sidebar';
 
 const SidebarLayout = ({ location }) => (
   <StaticQuery
@@ -58,10 +58,10 @@ const SidebarLayout = ({ location }) => (
 
       if (finalNavItems && finalNavItems.length) {
         return (
-          <Sidebar>
-            <ul className={'rightSideBarUL'}>
-              <li className={'rightSideTitle'}>CONTENTS</li>
-              {finalNavItems}
+          <Sidebar className="px-2 py-5">
+            <ul className="list-unstyled">
+              <li className="h6 text-capitalize">Contents</li>
+                {finalNavItems}
             </ul>
           </Sidebar>
         );
