@@ -3,7 +3,7 @@ import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 import { Global } from '@emotion/core';
 
 import { lightTheme, darkTheme } from './index';
-import Header from '../layout/Header';
+import {Header, SubHeader} from '../layout';
 import { baseStyles } from '../styles/GlobalStyles';
 
 class ThemeProvider extends React.Component {
@@ -42,6 +42,7 @@ class ThemeProvider extends React.Component {
           isDarkThemeActive={isDarkThemeActive}
           toggleActiveTheme={this.toggleActiveTheme}
         />
+        <SubHeader />
         <EmotionThemeProvider theme={currentActiveTheme}>{children}</EmotionThemeProvider>
       </div>
     );

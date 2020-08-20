@@ -2,11 +2,11 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { MDXProvider } from '@mdx-js/react';
 
-import ThemeProvider from '../theme/themeProvider';
-import mdxComponents from '../mdxComponents';
-import Sidebar from '../sidebar';
-import RightSidebar from './rightSidebar';
-import config from '../../data/config.js';
+import ThemeProvider from '../../theme/themeProvider';
+import mdxComponents from '../../mdxComponents';
+import Sidebar from '../../sidebar';
+import RightSidebar from '../rightSidebar';
+import config from '../../../data/config.js';
 
 
 const Content = styled('main')`

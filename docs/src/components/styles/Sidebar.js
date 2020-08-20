@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 
 export const Sidebar = styled('aside')`
   background: ${props => props.theme.colors.background};
-
   .rightSideTitle {
     color: ${props => props.theme.colors.text};
   }

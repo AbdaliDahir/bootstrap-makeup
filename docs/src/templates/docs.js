@@ -3,8 +3,8 @@ import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
 
-import { Layout, Link } from '$components';
-import NextPrevious from '../components/layout/NextPrevious';
+// import { Layout, Link } from '$components';
+import {NextPrevious, Layout, Link} from '../components/layout';
 import config from '../data/config';
 import { Edit, StyledHeading, StyledMainWrapper } from '../components/styles/Docs';
 

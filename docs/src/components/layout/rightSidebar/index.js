@@ -2,8 +2,8 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
 // import Link from './link';
-import config from '../../data/config';
-import { Sidebar, ListItem } from '../styles/Sidebar';
+import config from '../../../data/config';
+import { Sidebar, ListItem } from '../../styles/Sidebar';
 
 const SidebarLayout = ({ location }) => (
   <StaticQuery

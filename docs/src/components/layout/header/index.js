@@ -1,15 +1,14 @@
 import React from 'react';
+import Link from '../link';
+import Loadable from 'react-loadable';
 import styled from '@emotion/styled';
 import { StaticQuery, graphql } from 'gatsby';
-import GitHubButton from 'react-github-btn';
-import Link from './link';
-import Loadable from 'react-loadable';
+import {GitHub, Twitter} from 'react-feather';
+import config from '../../../data/config.js';
+import LoadingProvider from '../../mdxComponents/loading';
+import { DarkModeSwitch } from '../darkModeSwitch/';
 
-import config from '../../data/config.js';
-import LoadingProvider from '../mdxComponents/loading';
-import { DarkModeSwitch } from './DarkModeSwitch';
-
-const help = require('../../assets/img/help.svg');
+const help = require('../../../assets/img/help.svg');
 
 const isSearchEnabled = config.header.search && config.header.search.enabled ? true : true;
 
@@ -23,10 +22,10 @@ if (isSearchEnabled && config.header.search.indexName) {
   });
 }
 
-import Sidebar from '../sidebar';
+import Sidebar from '../../sidebar';
 
 const LoadableComponent = Loadable({
-  loader: () => import('../search/index'),
+  loader: () => import('../../search/index'),
   loading: LoadingProvider,
 });
 
@@ -53,7 +52,7 @@ const StyledBgDiv = styled('div')`
   }
 `;
 
-const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
+const Header = ({ isDarkThemeActive, toggleActiveTheme }) => (
   <StaticQuery
     query={graphql`
       query headerTitleQuery {
@@ -61,8 +60,7 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
           siteMetadata {
             headerTitle
             githubUrl
-            helpUrl
-            tweetText
+            twitterUrl
             logo {
               link
               image
@@ -78,7 +76,7 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
     render={data => {
       const {
         site: {
-          siteMetadata: { headerTitle, githubUrl, helpUrl, tweetText, logo, headerLinks },
+          siteMetadata: { headerTitle, githubUrl, twitterUrl, logo, headerLinks },
         },
       } = data;
 
@@ -86,9 +84,9 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
 
       return (
         <>
-          <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <div className="container-fluid">
-            <Link to={finalLogoLink} className={'navbar-brand'}>
+          <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <div className="container">
+              <Link to={finalLogoLink} className={'navbar-brand'}>
                 Bootstrap Makup
               </Link>
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -121,35 +119,25 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
                     }
                   })}
 
-                  <li className="nav-item">
-                    <div className="dropdown">
-                      <button className="btn btn-bd-light dropdown-toggle" id="bd-versions" data-toggle="dropdown" aria-expanded="false" data-display="static">
-                        version 1.0.0
-                      </button>
-                    </div>
-                  </li>
-
-                  { tweetText !== '' || githubUrl !== '' ? (
-                    <li className="divider hiddenMobile"></li>
-                    ) : null}
-                    {githubUrl !== '' ? (
-                      <li className={'nav-item githubBtn'}>
-                        <GitHubButton
-                          href={githubUrl}
-                          data-show-count="true"
-                          aria-label="Star on GitHub"
-                        >
-                          Star
-                        </GitHubButton>
-                      </li>
-                    ) : null}
-                  <li className="nav-item">
+                  { twitterUrl !== '' ? (
+                    <li className="nav-item mx-lg-1">
+                      <a className="nav-link" href={twitterUrl} alt="twitter page" > <Twitter /> </a>
+                    </li>
+                  ) : null}
+                  {githubUrl !== '' ? (
+                    <li className="nav-item mx-lg-1">
+                      <a className="nav-link" href={githubUrl} alt="github repo" > <GitHub /> </a>
+                    </li>
+                  ) : null}
+                  <li className="nav-item mx-lg-1">
                     <DarkModeSwitch
                       isDarkThemeActive={isDarkThemeActive}
                       toggleActiveTheme={toggleActiveTheme}
                     />
                   </li>
-
+                  <li className="nav-item ml-lg-1">
+                    <button className="btn btn-primary"> v 1.0.0 </button>
+                  </li>
                 </ul>
               </div>
             </div>

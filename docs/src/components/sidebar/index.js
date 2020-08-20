@@ -45,12 +45,6 @@ const SidebarLayout = ({ location }) => (
     render={({ allMdx }) => {
       return (
         <aside className="py-5">
-          {config.sidebar.title ? (
-            <div
-              className={'h5 text-capitalize mb-5'}
-              dangerouslySetInnerHTML={{ __html: config.sidebar.title }}
-            />
-          ) : null}
           <ul className="list-unstyled">
             <Tree edges={allMdx.edges} />
             {config.sidebar.links && config.sidebar.links.length > 0 && <Divider />}

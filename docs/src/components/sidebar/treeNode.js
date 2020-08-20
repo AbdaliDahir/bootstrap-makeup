@@ -1,7 +1,7 @@
 import React from 'react';
-import { ChevronDown, ChevronsRight } from 'react-feather';
+import { ChevronDown, ChevronRight } from 'react-feather';
 import config from '../../data/config';
-import Link from '../layout/link';
+import {Link} from './../layout';
 
 const TreeNode = ({ className = '', setCollapsed, collapsed, url, title, items, ...rest }) => {
   const isCollapsed = collapsed[url];
@@ -28,7 +28,7 @@ const TreeNode = ({ className = '', setCollapsed, collapsed, url, title, items, 
         <Link to={url} className={calculatedClassName + " text-decoration-none d-flex justify-content-start align-items-center"}>
           {!config.sidebar.frontLine && title && hasChildren ? (
             <span onClick={collapse} aria-label="collapse" className="collapser text-dark pr-2">
-              {!isCollapsed ? <ChevronDown width="18" /> : <ChevronsRight width="18" />}
+              {!isCollapsed ? <ChevronDown width="18" /> : <ChevronRight width="18" />}
             </span>
           ) : null}
           <span> {title} </span>
@@ -36,7 +36,7 @@ const TreeNode = ({ className = '', setCollapsed, collapsed, url, title, items, 
       )}
 
       {!isCollapsed && hasChildren ? (
-        <ul className="list-unstyled pl-2 mt-3 border-left">
+        <ul className="list-unstyled pl-2 mt-3">
           {items.map((item, index) => (
             <TreeNode
               key={item.url + index.toString()}

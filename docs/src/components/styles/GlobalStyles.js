@@ -1,6 +1,6 @@
 import { injectGlobal } from 'emotion';
 
-import './style.scss'
+import './../../assets/scss/style.scss'
 
 export const baseStyles = injectGlobal`
   html,

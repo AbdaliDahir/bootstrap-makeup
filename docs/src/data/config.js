@@ -8,23 +8,16 @@ const config = {
   header: {
     logo: 'https://graphql-engine-cdn.bootstrap-makeup.io/learn-bootstrap-makeup/assets/homepage/brand.svg',
     logoLink: 'https://bootstrap-makeup.io/learn/',
-    title:
-      "<a href='https://bootstrap-makeup.io/learn/'> Bootstrap Makeup </a>",
+    title: "<a href='https://bootstrap-makeup.io/learn/'> Bootstrap Makeup </a>",
     githubUrl: 'https://github.com/bootstrap-makeup/gatsby-gitbook-boilerplate',
-    helpUrl: '',
-    tweetText: '',
-    social: `<li>
-      <a href="https://twitter.com/bootstrap-makeuphq" target="_blank" rel="noopener">
-        <div class="twitterBtn">
-          <img src='https://graphql-engine-cdn.bootstrap-makeup.io/learn-bootstrap-makeup/assets/homepage/twitter-brands-block.svg' alt={'Discord'}/>
-        </div>
-      </a>
-    </li>`,
+    twitterUrl: 'https://twitter.com/',
     links: [{ text: '', link: '' }],
     search: {
       enabled: false,
       indexName: 'nuyt',
-
+      algoliaAppId: 'NR80I5D7IL',
+      algoliaSearchKey: 'd49c2832268f5c4090ab97ca3174e2ce',
+      algoliaAdminKey: '57b260898b461463aa7c2ddba15ed38a',
     },
   },
   sidebar: {
@@ -38,8 +31,6 @@ const config = {
     links: [{ text: 'bootstrap-makeup', link: 'https://bootstrap-makeup.io' }],
     frontline: false,
     ignoreIndex: true,
-    title:
-      "<a href='https://bootstrap-makeup.io/learn/'>Bootstrap Makeup</a>",
   },
   siteMetadata: {
     title: 'Gatsby Gitbook Boilerplate | bootstrap-makeup',
