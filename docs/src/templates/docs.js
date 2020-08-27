@@ -6,7 +6,7 @@ import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
 // import { Layout, Link } from '$components';
 import {NextPrevious, Layout, Link} from '../components/layout';
 import config from '../data/config';
-import { Edit, StyledHeading, StyledMainWrapper } from '../components/styles/Docs';
+import { Edit, StyledMainWrapper } from '../components/styles/Docs';
 
 const forcedNavOrder = config.sidebar.forcedNavOrder;
 
@@ -90,8 +90,8 @@ export default class MDXRuntimeTest extends Component {
           ) : null}
           <link rel="canonical" href={canonicalUrl} />
         </Helmet>
-        <div className={'titleWrapper'}>
-          <StyledHeading>{mdx.fields.title}</StyledHeading>
+        <div className="d-lg-flex align-items-center justify-content-between mb-5 pb-5 border-bottom">
+          <h2 className="h2 text-dark text-capitalize">{mdx.fields.title}</h2>
           <Edit className={'mobileView'}>
             {docsLocation && (
               <Link className={'gitBtn'} to={`${docsLocation}/${mdx.parent.relativePath}`}>

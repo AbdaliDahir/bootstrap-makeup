@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import styled from '@emotion/styled';
 import { ExternalLink } from 'react-feather';
 import config from '../../data/config';
+import './style.scss';
 
 // eslint-disable-next-line no-unused-vars
 const ListItem = ({ className, active, level, ...props }) => {
@@ -15,7 +16,6 @@ const ListItem = ({ className, active, level, ...props }) => {
     </li>
   );
 };
-
 
 const Divider = styled(props => (
   <li {...props}>
@@ -45,7 +45,7 @@ const SidebarLayout = ({ location }) => (
     render={({ allMdx }) => {
       return (
         <aside className="py-5">
-          <ul className="list-unstyled">
+          <ul className="list-unstyled list-sidebar">
             <Tree edges={allMdx.edges} />
             {config.sidebar.links && config.sidebar.links.length > 0 && <Divider />}
             {config.sidebar.links.map((link, key) => {

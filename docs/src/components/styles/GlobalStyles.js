@@ -215,26 +215,6 @@ export const baseStyles = injectGlobal`
     color: #fff;
   }
 
-  .titleWrapper {
-    display: flex;
-    align-items: center;
-    padding-bottom: 40px;
-    border-bottom: 1px solid rgb(230, 236, 241);
-    margin-bottom: 32px;
-  }
-
-  .gitBtn {
-    height: 30px;
-    min-height: 30px;
-    display: flex;
-    align-items: center;
-  }
-
-  .gitBtn img {
-    width: 15px;
-    display: inline-block;
-    margin-right: 5px;
-  }
 
   .addPaddTopBottom {
     padding: 50px 0;
@@ -535,14 +515,7 @@ export const baseStyles = injectGlobal`
       padding-right: 15px;
     }
 
-    .titleWrapper {
-      padding: 0 15px;
-      display: block;
-    }
 
-    .gitBtn {
-      display: inline-block;
-    }
 
     .mobileView {
       text-align: left !important;
