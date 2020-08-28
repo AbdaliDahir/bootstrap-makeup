@@ -20,14 +20,14 @@ const TreeNode = ({ className = '', setCollapsed, collapsed, url, title, items, 
   const active =
     location && (location.pathname === url || location.pathname === config.gatsby.pathPrefix + url);
 
-  const calculatedClassName = `${className} item ${active ? 'active text-primary bg-light rounded' : 'text-dark '}`;
+  const calculatedClassName = `${className} item ${active ? 'active text-primary bg-white shadow-sm rounded' : 'text-dark '}`;
 
   return (
     <li className="mb-3">
       {title && (
-        <Link to={url} className={calculatedClassName + " p-1 text-decoration-none d-flex justify-content-start align-items-center"}>
+        <Link to={url} className={calculatedClassName + " py-2 text-decoration-none d-block"}>
           {!config.sidebar.frontLine && title && hasChildren ? (
-            <span onClick={collapse} aria-label="collapse" className="collapser text-dark pr-1">
+            <span onClick={collapse} aria-label="collapse" className="collapser text-dark pr-2">
               {!isCollapsed ? <ChevronDown width="18" /> : <ChevronRight width="18" />}
             </span>
           ) : null}
@@ -36,7 +36,7 @@ const TreeNode = ({ className = '', setCollapsed, collapsed, url, title, items, 
       )}
 
       {!isCollapsed && hasChildren ? (
-        <ul className="list-unstyled">
+        <ul className="list-unstyled border-primary">
           {items.map((item, index) => (
             <TreeNode
               key={item.url + index.toString()}

@@ -85,7 +85,7 @@ const Header = ({ isDarkThemeActive, toggleActiveTheme }) => (
       return (
         <>
           <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-            <div className="container">
+            <div className="container-fluid">
               <Link to={finalLogoLink} className={'navbar-brand'}>
                 Bootstrap Makup
               </Link>

@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import styled from '@emotion/styled';
 import { ExternalLink } from 'react-feather';
 import config from '../../data/config';
-import './style.scss';
+
 
 // eslint-disable-next-line no-unused-vars
 const ListItem = ({ className, active, level, ...props }) => {

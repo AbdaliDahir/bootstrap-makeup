@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from '../link';
-
+import {ArrowLeft, ArrowRight} from 'react-feather';
 import { StyledNextPrevious } from '../../styles/PageNavigationButtons';
 
 const NextPrevious = ({ mdx, nav }) => {
@@ -48,72 +48,42 @@ const NextPrevious = ({ mdx, nav }) => {
   }
 
   return (
-    <StyledNextPrevious>
-      {previousInfo.url && currentIndex >= 0 ? (
-        <Link to={nav[currentIndex - 1].url} className={'previousBtn'}>
-          <div className={'leftArrow'}>
-            <svg
-              preserveAspectRatio="xMidYMid meet"
-              height="1em"
-              width="1em"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              stroke="currentColor"
-              className="_13gjrqj"
-            >
-              <g>
-                <line x1="19" y1="12" x2="5" y2="12" />
-                <polyline points="12 19 5 12 12 5" />
-              </g>
-            </svg>
-          </div>
-          <div className={'preRightWrapper'}>
-            <div className={'smallContent'}>
-              <span>Previous</span>
+    <div className="row align-items-center justify-content-between">
+      <div className="col-6 pl-0">
+        {previousInfo.url && currentIndex >= 0 ? (
+          <Link to={nav[currentIndex - 1].url} className="d-flex align-items-center justify-content-between border rounded text-decoration-none py-3 px-4">
+            <div className={'leftArrow'}>
+              <ArrowLeft />
             </div>
-            <div className={'nextPreviousTitle'}>
-              <span>{nav[currentIndex - 1].title}</span>
+            <div className="text-right">
+              <p className="text-dark text-capitalize">
+                Previous
+              </p>
+              <div className="">
+                <span>{nav[currentIndex - 1].title}</span>
+              </div>
             </div>
-          </div>
-        </Link>
-      ) : null}
-      {nextInfo.url && currentIndex >= 0 ? (
-        <Link to={nav[currentIndex + 1].url} className={'nextBtn'}>
-          <div className={'nextRightWrapper'}>
-            <div className={'smallContent'}>
-              <span>Next</span>
+          </Link>
+        ) : null}
+      </div>
+      <div className="col-6 pr-0">
+        {nextInfo.url && currentIndex >= 0 ? (
+          <Link to={nav[currentIndex + 1].url} className="d-flex align-items-center justify-content-between border rounded text-decoration-none py-3 px-4">
+            <div className="text-left">
+              <p className="text-dark text-capitalize">
+                Next
+              </p>
+              <div className="">
+                <span>{nav[currentIndex + 1] && nav[currentIndex + 1].title}</span>
+              </div>
             </div>
-            <div className={'nextPreviousTitle'}>
-              <span>{nav[currentIndex + 1] && nav[currentIndex + 1].title}</span>
+            <div className={'rightArrow'}>
+              <ArrowRight />
             </div>
-          </div>
-          <div className={'rightArrow'}>
-            <svg
-              preserveAspectRatio="xMidYMid meet"
-              height="1em"
-              width="1em"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              stroke="currentColor"
-              className="_13gjrqj"
-            >
-              <g>
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </g>
-            </svg>
-          </div>
-        </Link>
-      ) : null}
-    </StyledNextPrevious>
+          </Link>
+        ) : null}
+      </div>
+    </div>
   );
 };
 

@@ -6,7 +6,6 @@ import ThemeProvider from '../../theme/themeProvider';
 import mdxComponents from '../../mdxComponents';
 import Sidebar from '../../sidebar';
 import RightSidebar from '../rightSidebar';
-import config from '../../../data/config.js';
 
 
 const Content = styled('main')`
@@ -20,10 +19,10 @@ const Content = styled('main')`
 const Layout = ({ children, location }) => (
   <ThemeProvider location={location}>
     <MDXProvider components={mdxComponents}>
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-2">
-            <div className="left-sidebar">
+      <div className="body-main">
+        <div className="row gx-0">
+          <div className="col-lg-2 px-0">
+            <div className="left-sidebar px-lg-3 px-2 h-100 bg-light border-right">
               <Sidebar location={location} />
             </div>
           </div>
@@ -32,7 +31,7 @@ const Layout = ({ children, location }) => (
               <div>{children}</div>
             </Content>
           </div>
-          <div className="col-lg-2">
+          <div className="col-lg-2 px-0">
             <div className="right-sidebar">
               <RightSidebar location={location} />
             </div>

@@ -1,0 +1,16 @@
+.list-sidebar {
+  ul {
+    margin-top: 20px;
+      li a {
+        padding-left: 6px;
+      }
+      ul {
+      margin-left: 12px;
+      border-left: 2px solid;
+      padding-left: 14px;
+      li a {
+        padding-left: 15px;
+      }
+    }
+  }
+}
