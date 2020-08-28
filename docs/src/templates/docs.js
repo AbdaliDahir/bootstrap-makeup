@@ -100,7 +100,7 @@ export default class MDXRuntimeTest extends Component {
             )}
           </Edit>
         </div>
-        <StyledMainWrapper>
+        <StyledMainWrapper className="mx-auto">
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </StyledMainWrapper>
         <div className={'addPaddTopBottom'}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { MDXProvider } from '@mdx-js/react';
-
+import Sticky from 'react-stickynode';
 import ThemeProvider from '../../theme/themeProvider';
 import mdxComponents from '../../mdxComponents';
 import Sidebar from '../../sidebar';
@@ -23,7 +23,9 @@ const Layout = ({ children, location }) => (
         <div className="row gx-0">
           <div className="col-lg-2 px-0">
             <div className="left-sidebar px-lg-3 px-2 h-100 bg-light border-right">
-              <Sidebar location={location} />
+              <Sticky enabled={true} top={50}>
+                <Sidebar location={location} />
+              </Sticky>
             </div>
           </div>
           <div className="col-lg-8">
@@ -32,9 +34,11 @@ const Layout = ({ children, location }) => (
             </Content>
           </div>
           <div className="col-lg-2 px-0">
-            <div className="right-sidebar">
-              <RightSidebar location={location} />
-            </div>
+            <Sticky enabled={true} top={50}>
+              <div className="right-sidebar">
+                <RightSidebar location={location} />
+              </div>
+            </Sticky>
           </div>
         </div>
       </div>

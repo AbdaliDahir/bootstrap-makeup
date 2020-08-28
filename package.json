@@ -18,7 +18,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "cd docs && yarn",
     "docs": "cd docs && gatsby develop",
-    "full-start": "gulp && cd docs && gatsby develop"
+    "full-start": "gulp watch && cd docs && gatsby develop"
   },
   "repository": {
     "type": "git",
