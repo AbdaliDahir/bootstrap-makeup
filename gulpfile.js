@@ -21,14 +21,7 @@ function errorLog(error) {
   this.emit('end');
 }
 
-// gulp task 
-gulp.task('views', function buildHTML() {
-  return gulp.src(['./pages/*.pug', './pages/components/*.pug'])
-  .pipe(pug({
-    pretty: production ? false : true
-  }))
-  .pipe(gulp.dest('./www'))
-});
+
 // SASS - Compile SASS files into CSS
 //
 gulp.task('sass', async function () {
@@ -64,26 +57,12 @@ gulp.task('sass', async function () {
     .pipe(browserSync.stream());
 });
 
-//
-// BrowserSync (live reload) - keeps multiple browsers & devices in sync when building websites
-// 
-gulp.task('serve', function() {
-  browserSync.init({
-    files: "./www/*.html",
-    startPath: "./www/index.html",
-    server: {
-      baseDir: "./",
-    },
-  })
-});
 
 //
 // Gulp Watch and Tasks
 //
 gulp.task('watch', function() {
   gulp.watch('./scss/**/*.scss', gulp.series('sass'));
-  gulp.watch('./pages/**/*.pug', gulp.series('views'));
-  gulp.watch('./pages/**/*.pug').on('change', browserSync.reload);
 });
 
 //
@@ -97,7 +76,16 @@ gulp.task('minCSS', function() {
   .pipe(gulp.dest('./dist/css/'));
 });
 
+//
+// Copy Vendors - a utility to copy client-side dependencies into a folder
+//
+gulp.task('copyVendors', async function() {
+  gulp.src(npmDist(), {base:'./node_modules/@popperjs/core/dist/cjs/'})
+    .pipe(gulp.dest('./dist/js/'));
+});
+
 // Gulp Tasks
-gulp.task('default', gulp.series('sass', 'views', gulp.parallel('watch', 'serve'), function () {}));
+// gulp.task('default', gulp.series('sass', 'views', gulp.parallel('watch', 'serve'), function () {}));
+gulp.task('default', gulp.series('sass', gulp.parallel('watch'), function () {}));
 
 // gulp.task('build', ['minCSS']);

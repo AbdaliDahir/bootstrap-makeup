@@ -10,7 +10,7 @@ import config from '../../data/config';
 const ListItem = ({ className, active, level, ...props }) => {
   return (
     <li className={className}>
-      <a className="text-dark text-decoration-none d-flex align-items-center justify-content-between" href={props.to} {...props} target="_blank" rel="noopener noreferrer">
+      <a className="text-black-50 text-decoration-none d-flex align-items-center justify-content-between" href={props.to} {...props} target="_blank" rel="noopener noreferrer">
         {props.children}
       </a>
     </li>
