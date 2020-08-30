@@ -8,37 +8,34 @@ import Sidebar from '../../sidebar';
 import RightSidebar from '../rightSidebar';
 
 
-const Content = styled('main')`
-  background: ${({ theme }) => theme.colors.background};
-  table tr {
-    background: ${({ theme }) => theme.colors.background};
-  }
-`;
+// const BodyMain = styled('main')`
+//   background: ${({ theme }) => theme.colors.background};
+// `;
 
 
 const Layout = ({ children, location }) => (
   <ThemeProvider location={location}>
     <MDXProvider components={mdxComponents}>
-      <div className="body-main">
+      <div className="page-main">
         <div className="row gx-0">
           <div className="col-lg-2 px-0">
             <div className="left-sidebar px-lg-3 px-2 h-100 bg-light border-right">
-              <Sticky enabled={true} top={50}>
+              <Sticky enabled={true} top={0}>
                 <Sidebar location={location} />
               </Sticky>
             </div>
           </div>
           <div className="col-lg-8">
-            <Content className="mx-5 pt-5">
+            <main className="main-content px-5 pt-5">
               <div>{children}</div>
-            </Content>
+            </main>
           </div>
           <div className="col-lg-2 px-0">
-            <Sticky enabled={true} top={50}>
-              <div className="right-sidebar">
+            <div className="right-sidebar h-100">
+              <Sticky enabled={true} top={50}>
                 <RightSidebar location={location} />
-              </div>
-            </Sticky>
+              </Sticky>
+            </div>
           </div>
         </div>
       </div>

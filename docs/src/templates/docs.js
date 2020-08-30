@@ -91,7 +91,7 @@ export default class MDXRuntimeTest extends Component {
           <link rel="canonical" href={canonicalUrl} />
         </Helmet>
         <div className="d-lg-flex align-items-center justify-content-between mb-5 pb-5 border-bottom">
-          <h2 className="h2 text-dark text-capitalize">{mdx.fields.title}</h2>
+          <h2 className="h2 text-capitalize">{mdx.fields.title}</h2>
           <Edit className={'mobileView'}>
             {docsLocation && (
               <Link className={'gitBtn'} to={`${docsLocation}/${mdx.parent.relativePath}`}>

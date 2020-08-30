@@ -84,9 +84,9 @@ const Header = ({ isDarkThemeActive, toggleActiveTheme }) => (
 
       return (
         <>
-          <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <nav className={`navbar navbar-expand-lg border-bottom ${isDarkThemeActive ? 'navbar-dark border-dark bg-dark' : 'navbar-light bg-light'}`}>
             <div className="container-fluid">
-              <Link to={finalLogoLink} className={'navbar-brand'}>
+              <Link to={finalLogoLink} className={'navbar-brand font-weight-bold'}>
                 Bootstrap Makup
               </Link>
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

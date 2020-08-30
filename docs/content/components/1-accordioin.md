@@ -13,10 +13,11 @@ Toggle the visibility of content across your project with a few classes and our 
 
 Using the card component, you can extend the default collapse behavior to create an accordion. To properly achieve the accordion style, be sure to use `.accordion` as a wrapper.
 
-Basic Usage `accordion`
+
+
+###### Basic Usage accordion
 
 *   [Result](#fx-result-1)
-*   [HTML](#fx-html-1)
 
 <div class="accordion" id="accordionExample1">
   <div class="card">
@@ -51,8 +52,26 @@ Basic Usage `accordion`
       </div>
     </div>
   </div>
-...
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <div class="card-title collapsed" data-toggle="collapse" data-target="#collapseThree1"
+      aria-expanded="false" aria-controls="collapseThree1">
+      What do you mean by item and end product 3?
+      </div>
+    </div>
+    <div id="collapseThree1" class="collapse" aria-labelledby="headingThree1"
+    data-parent="#accordionExample1">
+      <div class="card-body">
+      2 - Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem officia
+      excepturi suscipit fugiat sint totam odio veniam accusantium dicta cupiditate fuga omnis,
+      sapiente amet laboriosam eveniet! Omnis, ullam necessitatibus?
+      </div>
+    </div>
+  </div>
 </div>
+
+
+*   [HTML CODE](#fx-html-1)
 
 ```html
 <div class="accordion" id="accordionExample1">
@@ -88,7 +107,7 @@ Basic Usage `accordion`
       </div>
     </div>
   </div>
-...
+  ...
 </div>
 ```
 

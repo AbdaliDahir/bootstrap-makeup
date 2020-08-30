@@ -3,16 +3,6 @@ import { injectGlobal } from 'emotion';
 import './../../assets/scss/style.scss'
 
 export const baseStyles = injectGlobal`
-  html,
-  body {
-    font-family: 'GT-Walsheim-Pro-Bold', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Roboto Light', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif,
-      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-
-    font-size: 16px;
-    scroll-behavior: smooth;
-  }
-
   .visibleMobile {
     display: none;
   }

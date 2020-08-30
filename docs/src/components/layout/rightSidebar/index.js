@@ -58,18 +58,18 @@ const SidebarLayout = ({ location }) => (
 
       if (finalNavItems && finalNavItems.length) {
         return (
-          <Sidebar className="px-2 py-5">
+          <aside className="px-2 py-5">
             <ul className="list-unstyled">
               <li className="h6 text-capitalize">Contents</li>
                 {finalNavItems}
             </ul>
-          </Sidebar>
+          </aside>
         );
       } else {
         return (
-          <Sidebar>
+          <aside>
             <ul></ul>
-          </Sidebar>
+          </aside>
         );
       }
     }}

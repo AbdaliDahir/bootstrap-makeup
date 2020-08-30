@@ -56,7 +56,7 @@ const NextPrevious = ({ mdx, nav }) => {
               <ArrowLeft />
             </div>
             <div className="text-right">
-              <p className="text-dark text-capitalize">
+              <p className="text-capitalize">
                 Previous
               </p>
               <div className="">
@@ -70,7 +70,7 @@ const NextPrevious = ({ mdx, nav }) => {
         {nextInfo.url && currentIndex >= 0 ? (
           <Link to={nav[currentIndex + 1].url} className="d-flex align-items-center justify-content-between border rounded text-decoration-none py-3 px-4">
             <div className="text-left">
-              <p className="text-dark text-capitalize">
+              <p className="text-capitalize">
                 Next
               </p>
               <div className="">

@@ -1,0 +1,41 @@
+%extendmainColorLight {
+  background-color: $light-mode-bg-primary;
+}
+%extendLinkColorLight {
+  color: $light-mode-text-link;
+}
+.navbar-light {
+  @extend %extendmainColorLight;
+  a {
+    @extend %extendLinkColorLight;
+  }
+}
+
+.border-light,
+.light-mode-active * {
+  border-color: $light-mode-border !important;
+}
+
+.light-mode-active {
+  color: $light-mode-text-link;
+  .left-sidebar {
+    background-color: $light-mode-bg-secondary !important;
+  }
+  .left-sidebar .item.active {
+    background-color: $light-mode-bg-primary !important;
+    color: $light-mode-text-link !important;
+  }
+  .main-content,
+  .right-sidebar {
+    @extend %extendmainColorLight;
+  }
+  a {
+    @extend %extendLinkColorLight;
+  }
+  pre {
+    background-color: $light-mode-bg-primary !important;
+    color: $light-mode-text-link !important;
+    border: 2px solid;
+    border-radius: 4px;
+  }
+}
