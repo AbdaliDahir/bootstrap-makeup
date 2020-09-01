@@ -2,4 +2,6 @@
   * Bootstrap Makeup - Include parts of Bootstrap
 ------------------------------------------------------------------------*/
 
-@import "./custom/core/accordion";
+@import "./custom/core/accordion/accordion";
+// Theme Modes
+@import './custom/core/accordion/darkMode';

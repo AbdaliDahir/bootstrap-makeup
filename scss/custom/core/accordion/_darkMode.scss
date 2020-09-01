@@ -1,0 +1,16 @@
+.dark-mode-active {
+	.accordion {
+		.card {
+      background-color: $dark-mode-bg-secondary;
+      color: $dark-mode-text;
+      border-color: $dark-mode-border;
+      > .card-header > .card-title {
+        background-color: $dark-mode-bg-primary;
+        color: $dark-mode-text;
+        &.collapsed {
+          color: $gray-500;
+        }
+      }
+		}
+	}
+}

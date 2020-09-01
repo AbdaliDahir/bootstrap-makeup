@@ -1,0 +1,41 @@
+%extendmainColor {
+  background-color: $dark-mode-bg-primary;
+}
+%extendLinkColor {
+  color: $dark-mode-text-link;
+}
+.navbar-dark {
+  @extend %extendmainColor;
+  a {
+    @extend %extendLinkColor;
+  }
+}
+
+.border-dark,
+.dark-mode-active * {
+  border-color: $dark-mode-border !important;
+}
+
+.dark-mode-active {
+  color: $dark-mode-text-link;
+  .left-sidebar {
+    background-color: $dark-mode-bg-secondary !important;
+  }
+  .left-sidebar .item.active {
+    background-color: $dark-mode-bg-primary !important;
+    color: $dark-mode-text-link !important;
+  }
+  .main-content,
+  .right-sidebar {
+    @extend %extendmainColor;
+  }
+  a {
+    @extend %extendLinkColor;
+  }
+  pre {
+    background-color: $dark-mode-bg-primary !important;
+    color: $dark-mode-text-link !important;
+    border: 2px solid;
+    border-radius: 4px;
+  }
+}

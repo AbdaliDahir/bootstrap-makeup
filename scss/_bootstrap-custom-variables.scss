@@ -1,7 +1,33 @@
 $primary: #3719ea;
 $danger: #ff2d2d;
+$dark: #0a0a0a;
+$success: #1dc9b7;
+$info: #5578eb;
+$warning:#ffb822;
+$danger: #fd397a;
+$secondary: #090909;
+$light: #fff;
+
 
 $theme-colors: (
   "primary": $primary,
-  "danger": $danger
+  "secondary": $secondary,
+  "danger": $danger,
+  "info": $info,
+  "warning": $warning,
+  "success": $success,
+  "dark": $dark,
+  "light": $light
 );
+
+
+$dark-mode-bg-primary: #1a1a1a;
+$dark-mode-bg-secondary: #1f2428;
+$dark-mode-border: #424242;
+$dark-mode-text: #fff;
+$dark-mode-text-link: #fff;
+
+$light-mode-bg-primary: #ffffff;
+$light-mode-bg-secondary: #ebeef0;
+$light-mode-border: #e2dede;
+$light-mode-text-link: #232323;

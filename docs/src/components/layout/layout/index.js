@@ -19,7 +19,7 @@ const Layout = ({ children, location }) => (
       <div className="page-main">
         <div className="row gx-0">
           <div className="col-lg-2 px-0">
-            <div className="left-sidebar px-lg-3 px-2 h-100 bg-light border-right">
+            <div className="left-sidebar px-lg-3 px-2 h-100 border-right">
               <Sticky enabled={true} top={0}>
                 <Sidebar location={location} />
               </Sticky>

@@ -1,8 +1,8 @@
 %extendmainColor {
-  background-color: $dark-mode-bg-primary;
+  background-color: $dark-mode-bg-primary !important;
 }
 %extendLinkColor {
-  color: $dark-mode-text-link;
+  color: $dark-mode-text-link !important;
 }
 .navbar-dark {
   @extend %extendmainColor;
@@ -11,19 +11,23 @@
   }
 }
 
-.border-dark,
-.dark-mode-active * {
-  border-color: $dark-mode-border !important;
+.dark-mode-active .border{
+  &-left,
+  &-right,
+  &-bottom,
+  &top {
+    border-color: $dark-mode-border !important;
+  }
 }
 
 .dark-mode-active {
   color: $dark-mode-text-link;
   .left-sidebar {
-    background-color: $dark-mode-bg-secondary !important;
+    background-color: $dark-mode-bg-secondary;
   }
   .left-sidebar .item.active {
-    background-color: $dark-mode-bg-primary !important;
-    color: $dark-mode-text-link !important;
+    background-color: $dark-mode-bg-primary;
+    color: $dark-mode-text-link;
   }
   .main-content,
   .right-sidebar {
@@ -33,9 +37,20 @@
     @extend %extendLinkColor;
   }
   pre {
-    background-color: $dark-mode-bg-primary !important;
-    color: $dark-mode-text-link !important;
-    border: 2px solid;
+    border: 2px solid ;
     border-radius: 4px;
+  }
+  pre,
+  .gitBtn {
+    background-color: $dark-mode-bg-secondary !important;
+    color: $dark-mode-text-link !important;
+  }
+
+  // github Btn
+  .gitBtn {
+    border-color: $dark-mode-border !important;
+    > svg {
+      color: $dark-mode-text-link;
+    }
   }
 }

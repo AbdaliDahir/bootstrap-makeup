@@ -25,7 +25,7 @@ export default {
   ),
   p: props => <p className="docs-regular-font my-4" {...props} />,
   pre: props => (
-    <div {...props} />
+    <div className="my-5" {...props} />
   ),
   code: CodeBlock,
   a: AnchorTag,

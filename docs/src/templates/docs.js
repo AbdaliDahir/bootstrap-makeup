@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
-
+import {GitHub} from 'react-feather';
 // import { Layout, Link } from '$components';
 import {NextPrevious, Layout, Link} from '../components/layout';
 import config from '../data/config';
@@ -25,7 +25,7 @@ export default class MDXRuntimeTest extends Component {
       },
     } = data;
 
-    const gitHub = require('../assets/img/github.svg');
+    // const gitHub = require('../assets/img/github.svg');
 
     const navItems = allMdx.edges
       .map(({ node }) => node.fields.slug)
@@ -94,8 +94,9 @@ export default class MDXRuntimeTest extends Component {
           <h2 className="h2 text-capitalize">{mdx.fields.title}</h2>
           <Edit className={'mobileView'}>
             {docsLocation && (
-              <Link className={'gitBtn'} to={`${docsLocation}/${mdx.parent.relativePath}`}>
-                <img src={gitHub} alt={'Github logo'} /> Edit on GitHub
+              <Link className={'gitBtn py-2 px-4 d-flex align-items-center'} to={`${docsLocation}/${mdx.parent.relativePath}`}>
+                <GitHub className="align-middle pr-2" />
+                <span className="align-middle">Edit on GitHub</span>
               </Link>
             )}
           </Edit>
